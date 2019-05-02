@@ -11,19 +11,13 @@ import scipy.signal as sps
 import scipy.linalg as spl
 import scipy.signal as signal
 import xscale.spectral.fft as xfft
-
-sys.path.insert(0, "/home/aajayi/Lib/python/w_k_scripts/")
-from SmallBox import smallbox
 import PowerSpec as ps
-
-for rbox in smallbox:
-    box = rbox
     
     
 ########################################            
-def get_dx_dy(data):
+def get_dx_dy(data,navlon,navlat):
     # Obtain dx and dy
-    x,y,dat = ps.interpolate(data,np.array(data.nav_lon),np.array(data.nav_lat))
+    x,y,dat = ps.interpolate(data,np.array(navlon),np.array(navlat))
     x1,y1 = x[0,:],y[:,0]
     dx=np.int(np.ceil(x1[1]-x1[0]))
     dy=np.int(np.ceil(y1[1]-y1[0]))
