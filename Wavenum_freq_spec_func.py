@@ -81,6 +81,13 @@ def get_f_kx_ky(hat):
     return f,kx,ky
 
 #########################################
+def get_f_kx_ky_mit(hat):
+    f = hat.f_time
+    kx = hat.f_i
+    ky = hat.f_j
+    return f,kx,ky
+
+#########################################
 def get_f_k_in_2D(kradial,wavnum,spec2D):
     _spec_1D = []
     for i in range(len(spec2D)):
